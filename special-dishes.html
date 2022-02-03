@@ -238,5 +238,22 @@
 
 	<!-- Main JS -->
 	<script src="js/app.min.js "></script>
+	
+<script>
+    function onSyneriseLoad() {
+        SR.init({
+            'trackerKey':'f8e1bcf0-29d4-4d92-a90c-39bbb2dfb8d9',
+        });
+    }
+
+    (function(s,y,n,e,r,i,se){s['SyneriseObjectNamespace']=r;s[r]=s[r]||[],
+     s[r]._t=1*new Date(),s[r]._i=0,s[r]._l=i;var z=y.createElement(n),
+     se=y.getElementsByTagName(n)[0];z.async=1;z.src=e;se.parentNode.insertBefore(z,se);
+     z.onload=z.onreadystatechange=function(){var rdy=z.readyState;
+     if(!rdy||/complete|loaded/.test(z.readyState)){s[i]();z.onload = null;
+     z.onreadystatechange=null;}};})(window,document,'script',
+     '//www.snrcdn.net/sdk/3.0/synerise-javascript-sdk.min.js','SR', 'onSyneriseLoad');
+</script>
+
 </body>
 </html>
