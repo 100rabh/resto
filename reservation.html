@@ -185,7 +185,7 @@
                                 <textarea class="form-control" id="message" name="message" rows="6" placeholder="Your Message ..."></textarea>
                             </div>
                             <div class="col-md-12 text-center">
-                                <button class="btn btn-primary btn-shadow btn-lg" type="submit" name="submit">Send Message</button>
+                                <button class="btn btn-primary btn-shadow btn-lg" type="submit" name="submit" onclick="return onSendMessage();">Send Message</button>
                             </div>
                         </div>
                     </form>
@@ -272,6 +272,7 @@
     function onSyneriseLoad() {
         SR.init({
             'trackerKey':'f8e1bcf0-29d4-4d92-a90c-39bbb2dfb8d9',
+			'dataLayer': window['syneriseLayer'] = []
         });
     }
 
@@ -282,6 +283,28 @@
      if(!rdy||/complete|loaded/.test(z.readyState)){s[i]();z.onload = null;
      z.onreadystatechange=null;}};})(window,document,'script',
      '//www.snrcdn.net/sdk/3.0/synerise-javascript-sdk.min.js','SR', 'onSyneriseLoad');
+	 
+	 function onSendMessage() {
+		SR.event.trackCustomEvent('cart.status', {
+			products: [
+							{
+							sku: '236',
+							quantity: 2,
+							brand: 'brand1',
+							category: 'cat1'
+							},
+							{
+							sku: '436',
+							quantity: 1,
+							brand: 'brand1',
+							category: 'cat1'
+							}
+						],
+						totalAmount: 150,
+						totalQuantity: 3
+			}, 'CartStatus');
+	    return true;
+	 } 
 </script>
 
 </body>
