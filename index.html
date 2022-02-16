@@ -739,6 +739,8 @@
             'trackerKey':'f8e1bcf0-29d4-4d92-a90c-39bbb2dfb8d9',
 			'dataLayer': window['syneriseLayer'] = []
         });
+		alert(SR.client.getIdentityHash());
+		alert(SR.client.hashIdentity("customer_email"));
     }
 
     (function(s,y,n,e,r,i,se){s['SyneriseObjectNamespace']=r;s[r]=s[r]||[],
@@ -759,9 +761,6 @@
 		 
 		 return true;
 	 }
-	 
-	alert(SR.client.getIdentityHash());
-	alert(SR.client.hashIdentity("customer_email"));
 </script>
 
 </body>
